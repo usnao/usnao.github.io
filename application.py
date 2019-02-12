@@ -13,7 +13,7 @@ articles = db.articles
 app = Flask(__name__, static_url_path = "", static_folder = "static")
 app.url_map.strict_slashes = False
 
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template("index.html")
     
@@ -79,7 +79,7 @@ def show_change_members():
 def show_members():
 
     # Oh my god please fix this soon
-    
+
     documents = members.find()
     documents = {document.get('name') : document for document in documents if document.get('name') != None} 
 
