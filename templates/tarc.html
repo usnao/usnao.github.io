@@ -441,4 +441,31 @@
             'padding' : "10px"
         });
     })
+
+    if(window.attachEvent) {
+        window.attachEvent('onresize', resize_reposition_images);
+    }
+    else if(window.addEventListener) {
+        window.addEventListener('resize', resize_reposition_images, true);
+    }
+    else {
+        console.log("This browser does not support resize events"); // Gotta do something about this one 
+    }
+
+    function resize_reposition_images(e) {
+        let width = document.documentElement.clientWidth;
+        let height = document.documentElement.clientHeight;
+
+        let image_height = document.getElementsByClassName('main-picture')[0].clientHeight; 
+        
+        let complete_height = 150 + image_height;
+        console.log(complete_height);
+        let percentage_bottom = 1 - complete_height / height;
+
+        let content_percentage = (complete_height - 50) / height; 
+
+        console.log(percentage_bottom);
+        $('.main-picture').css('bottom', percentage_bottom * 100 + '%')
+        $('#page-content').css('top', (content_percentage * 100) + "%");
+    }
 </script>
