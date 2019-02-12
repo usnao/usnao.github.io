@@ -1,0 +1,322 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>NRC</title>
+  <meta name="description" content="Newport Rocketry">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<style>
+    body {
+        font-family: "Inter";
+        font-weight: 500;
+    }
+
+    .valign {
+        display: flex;
+        align-items: center;
+    }
+
+    #logo {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    #header {
+        padding: 60px 100px 0px 100px; 
+
+        color: black;
+    }
+
+    #pages {
+        text-align: right; 
+    }
+
+    .page-link {
+        margin-right: 70px;
+        font-size: 17px;
+    }
+
+    #landing {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%; height: 100%;
+
+        padding-left: 250px;
+
+        color: white;
+    }
+
+    .title {
+        font-size: 100px;
+    }
+
+    .subtitle {
+        font-size: 60px;
+        font-weight: 500;
+    }
+
+    .smaller-title {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .larger-text {
+        font-size: 20px;
+    }
+
+    .main-picture {
+        position: absolute;
+
+        bottom: 27%;
+        left: 32%;
+
+        -webkit-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        -moz-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+    }
+
+    #page-content {
+        padding: 50px 100px 100px 100px;
+        }
+
+    .button {
+        border-width: 4px;
+        border-style: solid;
+        border-color: #2027BD;
+        color: #2027BD;
+        
+        padding: 10px;
+        background: transparent;
+
+        font-weight: 600;
+    }
+
+    #tarc-description {
+        margin-top: 50px;
+        font-size: 17px;
+    }
+
+    .accolade {
+        width: 100px;
+        height: 100px;
+
+        border-style: solid; 
+        border-width: 4px;
+
+        padding: 15px;
+
+        text-align: left;
+
+        margin-right: 20px;
+    }
+
+    #footer {
+        margin-top: 200px;
+        
+        width: 100%;
+        height: 400px;
+
+        background: #313859;
+
+        padding-left: 20%;
+    }
+
+    #main-page-content {
+        transition: opacity 0.3s ease;
+    }
+
+    .profile {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+
+        -webkit-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        -moz-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+    }
+ 
+    #articles {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    } 
+
+    .article {
+        -webkit-box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
+        -moz-box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
+        box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
+
+        width: 240px;
+        height: 300px;
+
+        position: relative;
+
+        margin-right: 50px;
+        margin-bottom: 50px;
+        
+    }
+
+    .article-title {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+
+        color: white;
+        width: 150px;
+
+        font-weight: 550;
+    }
+
+</style>
+
+<body style = 'overflow-x: hidden'>
+    <div style = 'display: flex' id = 'header'>
+        <div id = 'logo-wrapper'>
+            <span id = 'logo'>NRC</span>
+        </div> 
+
+        <div id = 'pages' style = 'width: 100%'>
+            <span class = 'page-link'>sli</span>
+            <span class = 'page-link'>tarc</span>
+            <span class = 'page-link'>members</span>
+            <span class = 'page-link'>sponsorship</span>
+            <span class = 'page-link'>news</span>
+        </div> 
+    </div>
+
+    <div id = 'main-page-content'>
+        <div id = 'page-content'>
+            <div class = '' style = 'font-size: 50px; color: #bbb; margin-bottom: 20px'>News</div>
+            <div id = 'articles'>
+                {% for title, background, link in titles %}
+                    <a href = '{{link}}'>
+                        <div class = 'article' style = 'background: {{background}}'>
+                                <span class = 'article-title'>{{title}}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+               
+            </div>
+        </div>
+
+    </div>
+
+    <div id = 'footer' class = 'valign' style = 'color: white;'>
+        <div style = 'padding-right: 0px; width: 50%; border-right-style: solid; border-right-color: #cbcbcb'>
+            <div class = '' style = 'font-size: 50px; color: #fff846'>
+                Newport Rocketry
+            </div>
+
+            <div style = 'margin-top: 15px; font-size: 20px;'>
+                Inquiries regarding sponsorships should be through our email, <b>newportrocketry@gmail.com</b>
+            </div>
+
+            <div style = 'margin-top: 30px; font-size: 13px;'>
+                Newport High School, 4333 Factoria Blvd SE
+            </div>
+
+            <div style = 'margin-top: 30px; font-size: 13px;'>
+                Powered by <b>Pied Piper</b>
+            </div>
+
+            <div style = 'margin-top: 5px; font-size: 13px;'>
+                Hosted by <b>DigitalOcean</b>
+            </div>
+        </div>
+
+        <div style = 'width: 20%; padding-left: 50px;'>
+                <div class = '' style = 'font-size: 35px'>
+                    Contact Us
+                </div>
+
+                <div style = 'margin-top: 15px; font-size: 17px; '>
+                    We're happy to hear from you!
+                    <br/>
+                    <br/>
+                    You can get in touch through our <b>instagram</b> or <b>email</b>.
+                </div>
+
+                
+            </div>
+    </div>        
+
+</body>
+</html>
+
+<script>
+    $("#meet-the-teams-button").click((e) => {
+        let pos = e.target.getBoundingClientRect();
+
+        console.log(pos);
+
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8
+        });
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'all 0.8s ease',
+            'display' : "initial"
+        })
+        }, 10)
+       
+
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'top' : "50px",
+            'left' : "50px",
+            'width' : "calc(100vw - 108px)",
+            'height' : "calc(100vh - 108px)",
+            'overflow-y' : 'scroll'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "50px"
+        });
+        }, 30)
+        
+    })
+
+    $('.sub-page-close').click(() => {
+        let pos = document.getElementById('meet-the-teams-button').getBoundingClientRect();
+
+       
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'none',
+            "display" : "none"
+        })
+        }, 1000)
+       
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8,
+            'overflow' : 'hidden'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "10px"
+        });
+    })
+</script>

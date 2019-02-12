@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\nathancyan\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\nathancyan\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.6.20\\**"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\nathancyan\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.6.20\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}
