@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template , redirect, url_for
 
 from pymongo import MongoClient
 
-connection_string = "mongodb://admin:lWSe9cgHKzHZFfEm@gradebook-cluster0-shard-00-00-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-01-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-02-l24me.mongodb.net:27017/test?ssl=true&replicaSet=GradeBook-Cluster0-shard-0&authSource=admin&retryWrites=true"
+connection_string = "mongodb://admin:Mf5TB36utkjq1MLb@gradebook-cluster0-shard-00-00-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-01-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-02-l24me.mongodb.net:27017/test?ssl=true&replicaSet=GradeBook-Cluster0-shard-0&authSource=admin&retryWrites=true"
 
 connection = MongoClient(connection_string)
 db = connection['newport-rocketry']
@@ -13,9 +13,17 @@ articles = db.articles
 app = Flask(__name__, static_url_path = "", static_folder = "static")
 app.url_map.strict_slashes = False
 
+photos = [] 
+with open('photos.txt', 'r') as p:
+    photos = p.readlines()
+
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/mobile")
+def mobile():
+    return render_template('mobile.html')
     
 @app.route("/tarc")
 def tarc():
@@ -75,19 +83,12 @@ def show_change_members():
 
     return render_template("change_members.html", members = documents)
 
-@app.route('/members')
+@app.route('/photos')
 def show_members():
 
     # Oh my god please fix this soon
-
-    documents = members.find()
-    documents = {document.get('name') : document for document in documents if document.get('name') != None} 
-
-    order = members.find_one({
-        "thing" : "order"
-    })
-
-    return render_template('members.html', members = [documents.get(name) for name in order['order']])
+    
+    return render_template('photos.html', photos = photos)
 
 @app.route('/remove-member', methods = ['POST'])    # might want to merge this with change members later
 def remove_member():

@@ -1,0 +1,383 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>NRC</title>
+  <meta name="description" content="Newport Rocketry">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+</head>
+
+<style>
+    body {
+        font-family: "Inter";
+        font-weight: 500;
+        margin: 0px;
+    }
+
+    .valign {
+        display: flex;
+        align-items: center;
+    }
+
+    #logo {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    #header {
+        padding: 60px 100px 0px 100px; 
+
+        color: black;
+    }
+
+    #pages {
+        text-align: right; 
+    }
+
+    .page-link {
+        margin-right: 70px;
+        font-size: 17px;
+
+        text-decoration: none;
+        color: black;
+    }
+
+    #landing {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%; height: 100%;
+
+        padding-left: 250px;
+
+        color: white;
+    }
+
+    .title {
+        font-size: 100px;
+    }
+
+    .subtitle {
+        font-size: 60px;
+        font-weight: 500;
+    }
+
+    .smaller-title {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .larger-text {
+        font-size: 20px;
+    }
+
+    .main-picture {
+        position: absolute;
+
+        bottom: 27%;
+        left: 32%;
+
+        -webkit-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        -moz-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+    }
+
+    #page-content {
+        padding: 50px 14vw 14vw 100px;
+        }
+
+    .button {
+        border-width: 4px;
+        border-style: solid;
+        border-color: #2027BD;
+        color: #2027BD;
+        
+        padding: 10px;
+        background: transparent;
+
+        font-weight: 600;
+    }
+
+    #tarc-description {
+        margin-top: 50px;
+        font-size: 17px;
+    }
+
+    .accolade {
+        width: 100px;
+        height: 100px;
+
+        border-style: solid; 
+        border-width: 4px;
+
+        padding: 15px;
+
+        text-align: left;
+
+        margin-right: 20px;
+    }
+
+    #footer {
+        margin-top: 100px;
+        box-sizing:border-box;
+        width: 100vw;
+        height: 400px;
+
+        background: #313859;
+
+        padding-left: 15vw;
+    }
+
+    #main-page-content {
+        transition: opacity 0.3s ease;
+    }
+
+    .profile {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+
+        -webkit-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        -moz-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+        box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
+    }
+ 
+    #articles {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    } 
+
+    .article {
+        -webkit-box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
+        -moz-box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
+        box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
+
+        width: 240px;
+        height: 300px;
+
+        position: relative;
+
+        margin-right: 50px;
+        margin-bottom: 50px;
+        
+    }
+
+    .article-title {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+
+        color: white;
+        width: 150px;
+
+        font-weight: 550;
+    }
+
+    .image-large {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: none;
+        background: #000000dd;
+
+        z-index: 1000;
+    }
+
+</style>
+
+<body style = 'overflow-x: hidden'>
+    <div style = 'display: flex' id = 'header'>
+        <div id = 'logo-wrapper'>
+            <span id = 'logo'>NRC</span>
+        </div> 
+
+        <div id = 'pages' style = 'width: 100%'>
+                <a href = '/sli' class = 'page-link'><span >sli</span></a>
+                <a href = '/tarc' class = 'page-link'><span>tarc</span></a>
+                <a href = '/photos' class = 'page-link'><span>photos</span></a>
+                <a href = '/sponsorship' class = 'page-link'><span>sponsorship</span></a>
+        </div> 
+    </div>
+
+    <div id = 'main-page-content'>
+        <div id = 'page-content'>
+            <div class = '' style = 'font-size: 50px; color: #1bc779; margin-bottom: 20px'>Photos</div>
+            
+            <div style = 'margin-top: 0px'>
+                <div style = 'width: 100%; min-width: 500px'>
+                    <p>
+                    Here are some photos we've taken over the years!</p>
+
+                    <div style = 'width: 100%; display: flex; flex-wrap: wrap'>
+                        {% for link in photos %}
+                            {% if loop.index != 0 and loop.index % 3 == 0 %}
+                            <img class = 'photo' src = '{{link}}' style = 'width: 22vw; height: 22vw; object-fit: cover; margin-bottom: 1.5vw'>
+
+                            {%else%}
+                            <img class = 'photo' src = '{{link}}' style = 'width: 22vw; height: 22vw; margin-right: 1.5vw; object-fit: cover; margin-bottom: 1.5vw'>
+                            {%endif%}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class = 'image-large valign' style = 'justify-content: center'>
+                <img class = 'image-large-i' style = 'max-width: 80vw; max-height: 80vh'/>
+                <span style = 'cursor: pointer; position: absolute; top: 50px; right: 50px; color: #ff3e3e; font-family: Material Icons; font-size: 40px;' class = 'photo-close'>
+                        close</span>                   
+            </div>
+        </div>
+
+    </div>
+
+    <div id = 'footer' class = 'valign' style = 'color: white;'>
+            <div style = 'padding-right: 5vw; width: 40vw; border-right-style: solid; border-right-color: #cbcbcb'>
+                <div class = '' style = 'font-size: 50px; color: #fff846'>
+                    Newport Rocketry
+                </div>
+
+                <div style = 'margin-top: 15px; font-size: 20px;'>
+                    Inquiries regarding sponsorships should be through our email, <a style = 'text-decoration: none; color: white
+                    ' href = 'mailto:newportrocketry@gmail.com'><b>newportrocketry@gmail.com</b></a>
+                </div>
+
+                <div style = 'margin-top: 30px; font-size: 13px;'>
+                    Newport High School, 4333 Factoria Blvd SE
+                </div>
+
+                <div style = 'margin-top: 30px; font-size: 13px;'>
+                    Powered by <b>Pied Piper</b>
+                </div>
+
+                <div style = 'margin-top: 5px; font-size: 13px;'>
+                    Hosted by <b>DigitalOcean</b>
+                </div>
+            </div>
+
+            <div style = 'width: 20vw; padding-left: 5vw;'>
+                    <div class = '' style = 'font-size: 35px'>
+                        Contact Us
+                    </div>
+
+                    <div style = 'margin-top: 15px; font-size: 17px; '>
+                        We're happy to hear from you!
+                        <br/>
+                        <br/>
+                        You can get in touch through our <a style = 'text-decoration: none; color: white
+                        ' href = 'https://instagram.com/newport.rocketry'><b>instagram</b></a> or <a style = 'text-decoration: none; color: white
+                        ' href = 'mailto:newportrocketry@gmail.com'><b>email</b></a>.
+                    </div>
+
+                 
+                </div>
+        </div>    
+
+</body>
+</html>
+
+<script>
+    let showing_photo = false;
+
+    $("#meet-the-teams-button").click((e) => {
+        let pos = e.target.getBoundingClientRect();
+
+        console.log(pos);
+
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8
+        });
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'all 0.8s ease',
+            'display' : "initial"
+        })
+        }, 10)
+       
+
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'top' : "50px",
+            'left' : "50px",
+            'width' : "calc(100vw - 108px)",
+            'height' : "calc(100vh - 108px)",
+            'overflow-y' : 'scroll'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "50px"
+        });
+        }, 30)
+        
+    })
+
+    $('.sub-page-close').click(() => {
+        let pos = document.getElementById('meet-the-teams-button').getBoundingClientRect();
+
+       
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'none',
+            "display" : "none"
+        })
+        }, 1000)
+       
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8,
+            'overflow' : 'hidden'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "10px"
+        });
+    })
+
+    $('.photo').click((e) => {
+        showing_photo = true;
+
+        console.log(e.target.src);
+        let modal = $($('.image-large')[0]);
+        let modal_img = $($('.image-large-i')[0]);
+        console.log(modal);
+        modal_img.attr('src', e.target.src);
+        console.log("assigning background");
+        modal.css('display', 'flex');
+    });
+
+    $('.image-large').click((e) => {
+        if (e.target.classList.contains("image-large")){
+            $(e.target).css('display', 'none');
+            showing_photo = false;
+        }
+    })
+
+    $('.photo-close').click(() => {
+        $('.image-large').css('display', 'none');
+        showing_photo = false;
+    })
+</script>

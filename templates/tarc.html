@@ -20,6 +20,7 @@
     body {
         font-family: "Inter";
         font-weight: 500;
+        margin: 0px;
     }
 
     .valign {
@@ -94,10 +95,10 @@
     #page-content {
         position: absolute;
 
-        top: 68%;
-        left: 20%;
+        top: 68vw;
+        padding-left: 20vw;
 
-        width: 60%;
+        width: 60vw;
         }
 
     .button {
@@ -132,15 +133,15 @@
     }
 
     #footer {
-        margin-top: 200px;
-        margin-left: -33.5%;
-        
-        width: 167%;
+        margin-left: -20vw;
+        margin-top: 100px;
+        box-sizing:border-box;
+        width: 100vw;
         height: 400px;
 
         background: #313859;
 
-        padding-left: 20%;
+        padding-left: 15vw;
     }
 
     #main-page-content {
@@ -175,14 +176,13 @@
         <div id = 'pages' style = 'width: 100%'>
                 <a href = '/sli' class = 'page-link'><span >sli</span></a>
                 <a href = '/tarc' class = 'page-link'><span>tarc</span></a>
-                <a href = '/members' class = 'page-link'><span>members</span></a>
+                <a href = '/photos' class = 'page-link'><span>photos</span></a>
                 <a href = '/sponsorship' class = 'page-link'><span>sponsorship</span></a>
-                <a href = '/news' class = 'page-link'><span>news</span></a>
         </div> 
     </div>
 
     <div id = 'main-page-content'>
-        <img src = "photos/tarc_nationals.jpg" style = 'width: 50%' class = 'main-picture'>
+        <img src = "photos/tarc_nationals.jpg" style = 'width: 50%; border-radius: 15px' class = 'main-picture'>
 
         <div id = 'page-content'>
             <div class = 'title' style = 'color: #97C5C2; margin-bottom: 20px'>
@@ -193,9 +193,7 @@
                 <span class = 'button' id = 'meet-the-teams-button' ref = 'meet-the-teams'>
                     Meet the teams
                 </span>
-                <span class = 'button' id = 'accolades-button' style = 'margin-left: 20px'>
-                    Our accolades
-                </span>
+                
             </div>
 
             <div id = 'tarc-description' style = 'column-count: 2; column-gap: 80px; width: 100%;'>
@@ -268,44 +266,47 @@
                 </div>
             </div>
 
-            <div id = 'footer' class = 'valign' style = 'color: white; flex-wrap: wrap'>
-                <div id='footer-left' style = 'padding-right: 0px; border-right-style: solid; border-right-color: #cbcbcb'>
-                    <div class = '' style = 'font-size: 50px; color: #fff846'>
-                        Newport Rocketry
-                    </div>
-
-                    <div style = 'margin-top: 15px; font-size: 20px;'>
-                        Inquiries regarding sponsorships should be through our email, <b>newportrocketry@gmail.com</b>
-                    </div>
-
-                    <div style = 'margin-top: 30px; font-size: 13px;'>
-                        Newport High School, 4333 Factoria Blvd SE
-                    </div>
-
-                    <div style = 'margin-top: 30px; font-size: 13px;'>
-                        Powered by <b>Pied Piper</b>
-                    </div>
-
-                    <div style = 'margin-top: 5px; font-size: 13px;'>
-                        Hosted by <b>DigitalOcean</b>
-                    </div>
-                </div>
-
-                <div id = 'footer-right' style = 'width: 20%; padding-left: 50px;'>
-                        <div class = '' style = 'font-size: 35px'>
-                            Contact Us
+            <div id = 'footer' class = 'valign' style = 'color: white;'>
+                    <div style = 'padding-right: 5vw; width: 40vw; border-right-style: solid; border-right-color: #cbcbcb'>
+                        <div class = '' style = 'font-size: 50px; color: #fff846'>
+                            Newport Rocketry
                         </div>
-    
-                        <div style = 'margin-top: 15px; font-size: 17px; '>
-                            We're happy to hear from you!
-                            <br/>
-                            <br/>
-                            You can get in touch through our <b>instagram</b> or <b>email</b>.
+        
+                        <div style = 'margin-top: 15px; font-size: 20px;'>
+                            Inquiries regarding sponsorships should be through our email, <a style = 'text-decoration: none; color: white
+                            ' href = 'mailto:newportrocketry@gmail.com'><b>newportrocketry@gmail.com</b></a>
                         </div>
-    
-                     
+        
+                        <div style = 'margin-top: 30px; font-size: 13px;'>
+                            Newport High School, 4333 Factoria Blvd SE
+                        </div>
+        
+                        <div style = 'margin-top: 30px; font-size: 13px;'>
+                            Powered by <b>Pied Piper</b>
+                        </div>
+        
+                        <div style = 'margin-top: 5px; font-size: 13px;'>
+                            Hosted by <b>DigitalOcean</b>
+                        </div>
                     </div>
-            </div>        
+        
+                    <div style = 'width: 20vw; padding-left: 5vw;'>
+                            <div class = '' style = 'font-size: 35px'>
+                                Contact Us
+                            </div>
+        
+                            <div style = 'margin-top: 15px; font-size: 17px; '>
+                                We're happy to hear from you!
+                                <br/>
+                                <br/>
+                                You can get in touch through our <a style = 'text-decoration: none; color: white
+                                ' href = 'https://instagram.com/newport.rocketry'><b>instagram</b></a> or <a style = 'text-decoration: none; color: white
+                                ' href = 'mailto:newportrocketry@gmail.com'><b>email</b></a>.
+                            </div>
+        
+                         
+                        </div>
+                </div>           
         </div>
 
        
@@ -327,53 +328,35 @@
                         Meet the teams
                 </div>
 
+                <div style = 'font-size: 50px; width: 60%'>Teams for the 2020 TARC contest have not been made yet!</div>
+
+                <!--
                 <div id = 'team-finna-blast' style = 'margin-bottom: 100px'>
                     <div class = 'smaller-title'>Finna Blast</div>
                     <div style = 'display: flex; flex-wrap: wrap; width: 100%; margin-top: 10px'>
                         <div style = 'width: 25%; max-width: 200px; margin-right: 50px'>
-                            <div class = 'profile' style = 'background: url("members/members-matt.jpg"); background-size: cover; color: black'>
+                            <div class = 'profile' style = 'background: url("members/photos-matt.jpg"); background-size: cover; color: black'>
                                     <div style = 'position: absolute; top: calc(100% + 10px); left: 0;font-size: 20px;' class = ''>Matt Ketkaroonkul</div>
                                 </div>
                         </div>
 
                         <div style = 'width: 25%; max-width: 200px; margin-right: 50px'>
-                            <div class = 'profile' style = 'background: url("members/members-kavel.jpg"); background-size: cover; color: black'>
+                            <div class = 'profile' style = 'background: url("members/photos-kavel.jpg"); background-size: cover; color: black'>
                                 <div style = 'position: absolute; top: calc(100% + 10px); left: 0;font-size: 20px;' class = ''>Kavel Rao</div>
                             </div>
                         </div>
 
                         <div style = 'width: 25%; max-width: 200px; margin-right: 50px'>
-                            <div class = 'profile' style = 'background: url("members/members-jonah.jpg"); background-size: cover; color: black'>
+                            <div class = 'profile' style = 'background: url("members/photos-jonah.jpg"); background-size: cover; color: black'>
                                     <div style = 'position: absolute; top: calc(100% + 10px); left: 0;font-size: 20px;' class = ''>Jonah Quist</div>
                                 </div>
                         </div>
                     </div>
                     
                 </div>
+                -->
 
-                <div id = 'team-oats'>
-                    <div class = 'smaller-title'>O.A.T.S</div>
-                    <div style = 'display: flex; flex-wrap: wrap; width: 100%; margin-top: 10px'>
-                        <div style = 'width: 25%; max-width: 200px; margin-right: 50px'>
-                            <div class = 'profile' style = 'background: url("members/members-matt.jpg"); background-size: cover; color: black'>
-                                    <div style = 'position: absolute; top: calc(100% + 10px); left: 0;font-size: 20px;' class = ''>Matt Ketkaroonkul</div>
-                                </div>
-                        </div>
-
-                        <div style = 'width: 25%; max-width: 200px; margin-right: 50px'>
-                            <div class = 'profile' style = 'background: url("members/members-kavel.jpg"); background-size: cover; color: black'>
-                                <div style = 'position: absolute; top: calc(100% + 10px); left: 0;font-size: 20px;' class = ''>Kavel Rao</div>
-                            </div>
-                        </div>
-
-                        <div style = 'width: 25%; max-width: 200px; margin-right: 50px'>
-                            <div class = 'profile' style = 'background: url("members/members-jonah.jpg"); background-size: cover; color: black'>
-                                    <div style = 'position: absolute; top: calc(100% + 10px); left: 0;font-size: 20px;' class = ''>Jonah Quist</div>
-                                </div>
-                        </div>
-                    </div>
-                    
-                </div>
+               
         </div>
     </div>
 
@@ -382,7 +365,7 @@
 
 <script>
     $(document).ready(() => {
-        resize_reposition_images();
+        setTimeout(resize_reposition_images, 500);
     })
 
     $("#meet-the-teams-button").click((e) => {

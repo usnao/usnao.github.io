@@ -19,6 +19,7 @@
     body {
         font-family: "Inter";
         font-weight: 500;
+        margin:0px;
     }
 
     .valign {
@@ -126,14 +127,14 @@
     }
 
     #footer {
-        margin-top: 200px;
-        
-        width: 100%;
+        margin-top: 100px;
+        box-sizing:border-box;
+        width: 100vw;
         height: 400px;
 
         background: #313859;
 
-        padding-left: 20%;
+        padding-left: 15vw;
     }
 
     #main-page-content {
@@ -193,9 +194,8 @@
         <div id = 'pages' style = 'width: 100%'>
                 <a href = '/sli' class = 'page-link'><span >sli</span></a>
                 <a href = '/tarc' class = 'page-link'><span>tarc</span></a>
-                <a href = '/members' class = 'page-link'><span>members</span></a>
+                <a href = '/photos' class = 'page-link'><span>photos</span></a>
                 <a href = '/sponsorship' class = 'page-link'><span>sponsorship</span></a>
-                <a href = '/news' class = 'page-link'><span>news</span></a>
         </div> 
     </div>
 
@@ -203,9 +203,9 @@
         <div id = 'page-content'>
             <div class = '' style = 'font-size: 50px; color: #ff9cb4; margin-bottom: 20px'>Sponsorship</div>
             
-            <span class = 'button' id = 'download-packet-button' ref = 'download-packet' style = 'margin-bottom: 50px'>
+            <a href = '/documents/sponsorship-packet.pdf' style = 'text-decoration: none'><span class = 'button' id = 'download-packet-button' ref = 'download-packet' style = 'margin-bottom: 50px'>
                 Download our sponsorship packet
-            </span>
+            </span></a>
 
             <div style = 'margin-top: 50px'>
                 <div style = 'width: 50%; min-width: 500px'>
@@ -230,43 +230,46 @@
     </div>
 
     <div id = 'footer' class = 'valign' style = 'color: white;'>
-        <div style = 'padding-right: 0px; width: 50%; border-right-style: solid; border-right-color: #cbcbcb'>
-            <div class = '' style = 'font-size: 50px; color: #fff846'>
-                Newport Rocketry
-            </div>
-
-            <div style = 'margin-top: 15px; font-size: 20px;'>
-                Inquiries regarding sponsorships should be through our email, <b>newportrocketry@gmail.com</b>
-            </div>
-
-            <div style = 'margin-top: 30px; font-size: 13px;'>
-                Newport High School, 4333 Factoria Blvd SE
-            </div>
-
-            <div style = 'margin-top: 30px; font-size: 13px;'>
-                Powered by <b>Pied Piper</b>
-            </div>
-
-            <div style = 'margin-top: 5px; font-size: 13px;'>
-                Hosted by <b>DigitalOcean</b>
-            </div>
-        </div>
-
-        <div style = 'width: 20%; padding-left: 50px;'>
-                <div class = '' style = 'font-size: 35px'>
-                    Contact Us
+            <div style = 'padding-right: 5vw; width: 40vw; border-right-style: solid; border-right-color: #cbcbcb'>
+                <div class = '' style = 'font-size: 50px; color: #fff846'>
+                    Newport Rocketry
                 </div>
 
-                <div style = 'margin-top: 15px; font-size: 17px; '>
-                    We're happy to hear from you!
-                    <br/>
-                    <br/>
-                    You can get in touch through our <b>instagram</b> or <b>email</b>.
+                <div style = 'margin-top: 15px; font-size: 20px;'>
+                    Inquiries regarding sponsorships should be through our email, <a style = 'text-decoration: none; color: white
+                    ' href = 'mailto:newportrocketry@gmail.com'><b>newportrocketry@gmail.com</b></a>
                 </div>
 
-                
+                <div style = 'margin-top: 30px; font-size: 13px;'>
+                    Newport High School, 4333 Factoria Blvd SE
+                </div>
+
+                <div style = 'margin-top: 30px; font-size: 13px;'>
+                    Powered by <b>Pied Piper</b>
+                </div>
+
+                <div style = 'margin-top: 5px; font-size: 13px;'>
+                    Hosted by <b>DigitalOcean</b>
+                </div>
             </div>
-    </div>        
+
+            <div style = 'width: 20vw; padding-left: 5vw;'>
+                    <div class = '' style = 'font-size: 35px'>
+                        Contact Us
+                    </div>
+
+                    <div style = 'margin-top: 15px; font-size: 17px; '>
+                        We're happy to hear from you!
+                        <br/>
+                        <br/>
+                        You can get in touch through our <a style = 'text-decoration: none; color: white
+                        ' href = 'https://instagram.com/newport.rocketry'><b>instagram</b></a> or <a style = 'text-decoration: none; color: white
+                        ' href = 'mailto:newportrocketry@gmail.com'><b>email</b></a>.
+                    </div>
+
+                 
+                </div>
+        </div>         
 
 </body>
 </html>
