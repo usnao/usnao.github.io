@@ -1,5 +1,7 @@
 <!doctype html>
 
+{% from "macros.html" import footer %}
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,179 +16,12 @@
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel = 'stylesheet' href = '/css/main.css'>
+
 </head>
 
 <style>
-    body {
-        font-family: "Inter";
-        font-weight: 500;
-
-        margin: 0px;
-    }
-
-    .valign {
-        display: flex;
-        align-items: center;
-    }
-
-    #logo {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    #header {
-        padding: 60px 100px 0px 100px; 
-
-        color: black;
-    }
-
-    #pages {
-        text-align: right; 
-    }
-
-    .page-link {
-        margin-right: 70px;
-        font-size: 17px;
-
-        text-decoration: none;
-        color: black;
-    }
-
-    #landing {
-        position: fixed;
-        top: 0;
-        left: 0;
-
-        width: 100%; height: 100%;
-
-        padding-left: 250px;
-
-        color: white;
-    }
-
-    .title {
-        font-size: 100px;
-    }
-
-    .subtitle {
-        font-size: 60px;
-        font-weight: 500;
-    }
-
-    .smaller-title {
-        font-size: 40px;
-        font-weight: 500;
-    }
-
-    .larger-text {
-        font-size: 20px;
-    }
-
-    .main-picture {
-        position: absolute;
-
-        /*bottom: 25%;*/
-        left: 32%;
-
-        -webkit-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
-        -moz-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
-        box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
-    }
-
-    #page-content {
-        position: absolute;
-
-        top: 68vh;
-        padding-left: 20vw;
-
-        width: 60vw;
-        }
-
-    .button {
-        border-width: 4px;
-        border-style: solid;
-        border-color: #2027BD;
-        color: #2027BD;
-        
-        padding: 10px;
-        background: transparent;
-
-        font-weight: 600;
-    }
-
-    #tarc-description {
-        margin-top: 50px;
-        font-size: 17px;
-    }
-
-    .accolade {
-        width: 100px;
-        height: 100px;
-
-        border-style: solid; 
-        border-width: 4px;
-
-        padding: 15px;
-
-        text-align: left;
-
-        margin-right: 20px;
-    }
-
-    #footer {
-        margin-left: -20vw;
-        margin-top: 100px;
-        box-sizing:border-box;
-        width: 100vw;
-        height: 400px;
-
-        background: #313859;
-
-        padding-left: 15vw;
-    }
-
-    #main-page-content {
-        transition: opacity 0.3s ease;
-    }
-
-    .profile {
-        position: relative;
-        width: 100%;
-        padding-top: 100%;
-
-        -webkit-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
-        -moz-box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
-        box-shadow: -6px 9px 18px -1px rgba(209,209,209,1);
-    }
-
-    .document {
-        -webkit-box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
-        -moz-box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
-        box-shadow: -6px 9px 25px -1px rgba(230,230,230,1);
-
-        width: 240px;
-        height: 300px;
-
-        position: relative;
-
-        margin-right: 50px;
-        margin-bottom: 50px;
-        
-    }
- 
-    .document-title {
-        position: absolute;
-        top: calc(100% + 20px);
-        left: 0px;
-
-        color: black;
-        width: 150px;
-
-        font-size: 16px;
-
-        font-weight: 550;
-    }
-
+    
     
 
 </style>
@@ -219,11 +54,10 @@
                 </span>
             </div>
 
-            <div id = 'tarc-description' style = 'column-count: 2; column-gap: 80px; column-fill: auto; height: 300px; width: 100%;'>
+            <div id = 'tarc-description' style = 'column-gap: 80px; column-fill: auto; width: 100%;'>
                     NASA's SLI, or Student Launch Initiative, is a competition that involves extensive research, exploration and experimentation with a certain academic interest relevant to rocketry. Some of SLI's goals are to provide research on environments accurately simulated by rocket launches, and the effective and cheap development of rocket propulsion mechanisms. NASA is supported by the Human Exploration and Operations Mission Directorate and U.S. aerospace industry
                     <br/><br/>
                     SLI projects are generally built around NASA missions, rather than "textbook" implementations of knowledge. 
-                    <br/><br/>
                     Newport, despite being a high school has been invited to attend SLI for two years in a row!
             </div>
 
@@ -249,48 +83,8 @@
                 
             </div>
 
-            <div id = 'footer' class = 'valign' style = 'color: white;'>
-                    <div style = 'padding-right: 5vw; width: 40vw; border-right-style: solid; border-right-color: #cbcbcb'>
-                        <div class = '' style = 'font-size: 50px; color: #fff846'>
-                            Newport Rocketry
-                        </div>
-        
-                        <div style = 'margin-top: 15px; font-size: 20px;'>
-                            Inquiries regarding sponsorships should be through our email, <a style = 'text-decoration: none; color: white
-                            ' href = 'mailto:newportrocketry@gmail.com'><b>newportrocketry@gmail.com</b></a>
-                        </div>
-        
-                        <div style = 'margin-top: 30px; font-size: 13px;'>
-                            Newport High School, 4333 Factoria Blvd SE
-                        </div>
-        
-                        <div style = 'margin-top: 30px; font-size: 13px;'>
-                            Powered by <b>Pied Piper</b>
-                        </div>
-        
-                        <div style = 'margin-top: 5px; font-size: 13px;'>
-                            Hosted by <b>DigitalOcean</b>
-                        </div>
-                    </div>
-        
-                    <div style = 'width: 20vw; padding-left: 5vw;'>
-                            <div class = '' style = 'font-size: 35px'>
-                                Contact Us
-                            </div>
-        
-                            <div style = 'margin-top: 15px; font-size: 17px; '>
-                                We're happy to hear from you!
-                                <br/>
-                                <br/>
-                                You can get in touch through our <a style = 'text-decoration: none; color: white
-                                ' href = 'https://instagram.com/newport.rocketry'><b>instagram</b></a> or <a style = 'text-decoration: none; color: white
-                                ' href = 'mailto:newportrocketry@gmail.com'><b>email</b></a>.
-                            </div>
-        
-                         
-                        </div>
-                </div>         
-
+           
+            {{footer()}}
                 
         </div>
 
