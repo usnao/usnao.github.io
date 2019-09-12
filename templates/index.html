@@ -1,17 +1,20 @@
 <!doctype html>
 
-{% from "macros.html" import footer, header %}
+{% from "macros.html" import footer, header, headerMobile, headerMobileExpanded %}
 
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>NRC</title>
   <meta name="description" content="Newport Rocketry">
   <meta name="author" content="Nathan Yan">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="/fonts/inter.css">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main.css?v=2">
 
 
 </head>
@@ -70,7 +73,6 @@
     }
 
     .subtitle {
-        font-size: 45px;
         font-weight: 700;
     }
 
@@ -81,17 +83,32 @@
     #link {
         color: white !important;
     }
+
+    @media only screen and (max-width: 900px){
+            #landing {
+                padding-left: 10vw;
+            }
+
+            
+        }
+
+    .photo-close {
+        color: white !important;
+    }
+
 </style>
 
 <body style = 'background: url("/photos/rocket_flame.jpg"); background-size: cover; background-position: 10% 25%'>
     {{header()}}
+    {{headerMobile()}}
+    {{headerMobileExpanded()}}
 
     <div id = 'landing' class = 'valign'>
         <div>
-            <div class = 'subtitle'>
+            <div class = 'subtitle largel-font'>
                 Newport Rocketry
             </div>
-            <div class = 'larger-text'>
+            <div class = 'mediuml-font'>
                 Newport High School, 4333 Factoria Blvd SE
             </div>
         </div>
@@ -99,3 +116,12 @@
 
 </body>
 </html>
+
+<script>
+ $('#menu-sandwich').click(() => {
+        $('#mobile-expand').css('display', 'flex');  
+    })
+
+    $('#menu-close').click(() => {
+        $('#mobile-expand').css('display', 'none');
+    })</script>
