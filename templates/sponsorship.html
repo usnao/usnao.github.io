@@ -1,6 +1,6 @@
 <!doctype html>
 
-{% from "macros.html" import footer, header %}
+{% from "macros.html" import footer, header, headerMobile, headerMobileExpanded %}
 
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="fonts/inter.css">
   <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
 
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -49,14 +50,22 @@
 
         }
 
+        @media only screen and (max-width: 500px){
+            #download-packet-button {
+                border-style: none;
+                padding:0 ;
+            }
+        }
+
 </style>
 
 <body style = 'overflow-x: hidden'>
-        {{header()}}
+        {{headerMobile()}}
+        {{headerMobileExpanded()}}
 
     <div id = 'main-page-content'>
         <div id = 'page-content'>
-            <div class = '' style = 'font-size: 50px; color: #ff9cb4; margin-bottom: 20px'>Sponsorship</div>
+            <div class = 'largel-font' style = 'color: #ff9cb4; margin-bottom: 20px'>Sponsorship</div>
             
             <a href = '/documents/sponsorship-packet.pdf' style = 'text-decoration: none'><span class = 'button' id = 'download-packet-button' ref = 'download-packet' style = 'margin-bottom: 50px'>
                 Download our sponsorship packet
@@ -70,7 +79,7 @@
                         If you're interested in sponsoring us, email us at <b>newportrocketry@gmail.com</b>
                     </p>
 
-                    <p style = 'font-size: 40px; font-weight: 600'>
+                    <p class = 'large-font' style ='font-weight: 600'>
                         Thanks to our sponsors, SolidWorks and Aerojet Rocketdyne
                     </p>
 
@@ -153,5 +162,14 @@
         $(".sub-page-text").css({
             'padding' : "10px"
         });
+    })
+
+    
+    $('#menu-sandwich').click(() => {
+        $('#mobile-expand').css('display', 'flex');  
+    })
+
+    $('#menu-close').click(() => {
+        $('#mobile-expand').css('display', 'none');
     })
 </script>

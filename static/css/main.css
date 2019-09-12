@@ -32,6 +32,11 @@ body {
         color: black;
     }
 
+    .page-link-mobile {
+        text-decoration: none;
+        color: black;
+    }
+
     #landing {
         position: fixed;
         top: 0;
@@ -153,7 +158,22 @@ body {
 
         
         }
-
+        .medium-font {
+            font-size: 13px;
+        }
+    
+        .mediuml-font {
+            font-size: 20px;
+        }
+    
+        .large-font {
+            font-size: 35px;
+        }
+    
+        .largel-font {
+            font-size: 50px
+        }
+    
     @media only screen and (max-width: 900px){
         #tarc-description 
         {  
@@ -188,30 +208,15 @@ body {
         }
 
         .large-font {
-            font-size: 4vw;
+            font-size: 5vw;
         }
 
         .largel-font {
-            font-size: 4.7vw;
+            font-size: 6vw;
         }
     }
 
-    .medium-font {
-        font-size: 13px;
-    }
-
-    .mediuml-font {
-        font-size: 20px;
-    }
-
-    .large-font {
-        font-size: 35px;
-    }
-
-    .largel-font {
-        font-size: 50px
-    }
-
+   
 
  #articles {
         width: 100%;
