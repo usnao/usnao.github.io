@@ -33,6 +33,10 @@ def tarc():
 def sli():
     return render_template("sli.html")
 
+@app.route("/info")
+def info():
+    return render_template("info.html")
+
 @app.route("/news")
 def news():
     colors = ['#ffbcbc', '#ffc657', '#6e6bff', '#ba6dae', '#ea7272', '#6b94ff']

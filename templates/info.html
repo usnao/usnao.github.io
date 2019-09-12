@@ -1,0 +1,172 @@
+<!doctype html>
+
+{% from "macros.html" import footer, header %}
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NRC</title>
+  <meta name="description" content="Newport Rocketry">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<style>
+   #page-content {
+        padding: 50px 10vw 14vw 10vw;
+        position: inherit;
+        width: initial;
+        }
+
+        #footer {
+            margin-left: 0;
+        }
+
+        #content {
+                width: 50%; 
+            }
+
+        @media only screen and (max-width: 800px){
+            #page-content {
+                padding: 50px 
+            }
+
+            #content {
+                min-width: 0 !important;
+                width: 100%;
+            }
+
+        }
+
+</style>
+
+<body style = 'overflow-x: hidden'>
+        {{header()}}
+
+    <div id = 'main-page-content'>
+        <div id = 'page-content'>
+            <div class = '' style = 'font-size: 50px; color: #4b57e6; margin-bottom: 20px'>Welcome!</div>
+            
+            <div style = 'margin-top: 25px; display: flex'>
+                <div id = 'content' style = ''>
+                    <p>
+                            At Newport Rocketry Club we are dedicated to the task of educating students in the field of rocketry through a hands-on approach. Members will learn how to design rockets using professional tools and software. They will build their own rockets from scratch according to their designs. Last but not least, members will prepare and launch their own rockets. Throughout the year, Newport Rocketry is generally focused upon competing in the annual Team America Rocketry Challenge, where middle and high schools across the country compete to build and launch rockets to specific criteria</p>
+                    <p>
+                        If you have any questions or comments, email us at <b>newportrocketry@gmail.com</b>!
+                    </p>
+
+                    <div class = '' style = 'font-size: 30px; color: #4b57e6; margin-bottom: 10px; margin-top: 50px'>Meetings</div>
+                    <p>
+                        Meetings are held every <b>Tuesday</b> and <b>Thursday</b> in Mr. Johnson's room (Room 3106), and are generally from <b>3:30-5:00PM</b>. The club also holds launches over the weekends on a weekly basis.
+                    </p>
+                    <p>
+                        Common meeting events are: analyzing data collected in previous flights, working on rocket designs, and of course, building rockets!  
+                    </p>
+
+                    <div class = '' style = 'font-size: 30px; color: #4b57e6; margin-bottom: 10px; margin-top: 50px'>TARC</div>
+                    <p>
+                        TARC, or The American Rocketry Challenge is a national competition that tasks students with designing, building, and launching rockets that meet certain criteria. Students try to launch their rockets to hit certain targets of flight time and altitude, and those who perform well enough will have the opportunity to go to Washington D.C. to compete at a national level (We have sent 3 teams over the past 2 years!)
+                    </p>
+
+                    <div class = '' style = 'font-size: 30px; color: #4b57e6; margin-bottom: 10px; margin-top: 50px'>Membership</div>
+                    <p>
+                        Rocketry is quite an expensive hobby, and there is a <b>$175</b> membership fee to join the club. If you are unable to pay the fee in any way, please talk to any of the club advisors (Mr. Brown, Mr. Johnson, Mr. Lang), or email us at <b>newportrocketry@gmail.com</b>.
+                    </p>
+
+                   
+                </div>
+                <div id = 'content-images' style = 'width: 50%; padding-left: 10vw'>
+                    <img src = 'https://lh3.googleusercontent.com/k_wP51DcvN5WUbfONXJYHDZ6MrGeSjNdriOjHGl0n8VHR190p1uex7HZJo1Sr8rZ7p1YT19nI19ZJngjWLQxxCvOwy9TuFMljG_5O5F7HEMGDXZETHZbHm1hFkZyMYo_aVVVUzNtOG9f5_JnYXlVcF4zBwdPprKG14tLlQe045BV4nVErCLUrWYO_7oy9c_cAoAzH5m8vXP-rX6_kbdY847rGp3wMv-JugSN2rjuTGhyEIWZkEUJeAiShbfcXM3Xw9wc0MCxkQ8JjRPtHGiDmKyaVONZ8L-MGzSlaSC1Kgax6BS9zaK7cg1qqoFtGcntfgQBMkOvF4X0lNfaGQt91ZTirQ7xAPSGkO4lLlEtIel-2elwsxzdEXiOd2jUo4_GewvNjcT0IRN1lWBCcvvcdqqVu81Azl5JWZ5m0oydPgmKQIduO3Fek8ME0DMZ5iOCyGC776IGm9HxNykOWsdjOIAlPzkCViCwiCoQPUfhDA0qp-jfHvcme4_4zbOzjrsUhgI3_nPh6nC0OD5RlkxHRVEjaa6dKNI-NdXZDkvPJwvVzFF5iVcDeRIFUxVKk95_4PC11GKqd2lfQ89sH7tH2oFKI0SGGGUZW4wRw9oT1Zq6ulhxzPCcY6Z07SUVgEVliov9uEP4HYgjiJUipA6U1nbXgzNdjG3PERQ4lk3qR5MVKh5PUfphLLBYyY-ByJO6ADVnVw5KGE50TY7_q59bGOAF3mVOOFPOUOx4GYztIhlG21U=w2244-h1682-no' style = 'width: 100%'/>
+                    <div style = 'color: #999; text-align: right'>The club getting together for a launch in mid-October!</div>
+
+                    <img src = 'https://lh3.googleusercontent.com/Pf4A2NIqb3FE8suyd6CzTGqwG62T5EAcwEsz7CCQdIrnIwuGkZRyjFrZ5WO18aNWG9lLRVLZMHJHRCswzTay3IRVZwYyZ3ifq62KaO_vsKCGLc4QrCCkl5dtMt34_AQFGPAYsO5DrQ_NMdqlTSLxpV6QZ9M-orqLmd7zAKENbIGBtTQGXdUUccxmYRTt0qrwQe-dhMQmDqKsBOumOCg-zqSz81KC26pv9_ZTPvLRMYsvaHRL9V40qsU4sLlYxW6HfNoEFGHKjRj_X56VW-W_etioWB4XoPr3c1ImsRS5gmJtENEP0NdB8ttNb4Mam2zMu864OKcZgHWLKJFiUZgxD6ehXWyBJOQRSuOwZO-UwZ_hWTbLIrSuaXqUwQ_5YATbMwwTx1a8-8wiZ1_D07GJiVXBmjVCg882qY1BgeyX_dm4KnQepSSnfzPBGbLOuwCThWDAXIxUd2MSpmZuuW2mAMtZPQXRjWvy4fwLiNtTpu8t1rv7b5vlbo0mCvVNJ7peh-D1E-OHTSXmAwGajGyhgouOhDHY0tS6tLfKXjAyNFDhZgtdZqDykOjEGryc9gk6XcQNZ4fjiU8IfX3gvODrruCrf7clgcLMt5D4sytf65RBoaxJCpd7deh2pFCgCdJoY8wXMpHU3QU462hPfirbx4DRi6qKrvXMRJduETRTb2Brw_ACC71y848fJ5BprCn8gJoNPVRg6eiB8D1_mlytkvoBe1fEDTLnKcipWjQVB0V2zqc=w2540-h1682-no' style = 'width: 100%; margin-top: 50px'/>
+                    <div style = 'color: #999; text-align: right'>New members launching their beginner rockets.</div>
+
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+    {{footer()}}
+
+</body>
+</html>
+
+<script>
+    $("#meet-the-teams-button").click((e) => {
+        let pos = e.target.getBoundingClientRect();
+
+        console.log(pos);
+
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8
+        });
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'all 0.8s ease',
+            'display' : "initial"
+        })
+        }, 10)
+       
+
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'top' : "50px",
+            'left' : "50px",
+            'width' : "calc(100vw - 108px)",
+            'height' : "calc(100vh - 108px)",
+            'overflow-y' : 'scroll'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "50px"
+        });
+        }, 30)
+        
+    })
+
+    $('.sub-page-close').click(() => {
+        let pos = document.getElementById('meet-the-teams-button').getBoundingClientRect();
+
+       
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'none',
+            "display" : "none"
+        })
+        }, 1000)
+       
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8,
+            'overflow' : 'hidden'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "10px"
+        });
+    })
+</script>

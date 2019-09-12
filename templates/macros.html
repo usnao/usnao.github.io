@@ -41,3 +41,19 @@
                         </div>
                 </div>        
 {%endmacro%}
+
+{% macro header() %}
+<div style = 'display: flex' id = 'header'>
+    <div id = 'logo-wrapper'>
+        <span id = 'logo'><a id = 'link' href = '/' style = 'text-decoration: none; color: black'>NRC</a></span>
+    </div> 
+
+    <div id = 'pages' style = 'width: 100%'>
+            <a href = '/info' class = 'page-link'><span >info</span></a>
+            <a href = '/sli' class = 'page-link'><span >sli</span></a>
+            <a href = '/tarc' class = 'page-link'><span>tarc</span></a>
+            <a href = '/photos' class = 'page-link'><span>photos</span></a>
+            <a href = '/sponsorship' class = 'page-link'><span>sponsorship</span></a>
+    </div> 
+</div>
+{%endmacro%}

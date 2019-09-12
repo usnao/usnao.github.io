@@ -1,6 +1,6 @@
 <!doctype html>
 
-{% from "macros.html" import footer %}
+{% from "macros.html" import footer, header %}
 
 <html lang="en">
 <head>
@@ -27,18 +27,7 @@
 </style>
 
 <body style = 'padding-bottom: 200px; overflow-x: hidden'>
-    <div style = 'display: flex; ' id = 'header'>
-        <div id = 'logo-wrapper'>
-            <span id = 'logo'>NRC</span>
-        </div> 
-
-        <div id = 'pages' style = 'width: 100%'>
-                <a href = '/sli' class = 'page-link'><span >sli</span></a>
-                <a href = '/tarc' class = 'page-link'><span>tarc</span></a>
-                <a href = '/photos' class = 'page-link'><span>photos</span></a>
-                <a href = '/sponsorship' class = 'page-link'><span>sponsorship</span></a>
-        </div> 
-    </div>
+        {{header()}}
 
     <div id = 'main-page-content'>
         <img src = "/photos/sli-prelaunch.jpg" style = 'width: 50%; border-radius: 15px' class = 'main-picture'>
