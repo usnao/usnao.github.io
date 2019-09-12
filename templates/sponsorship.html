@@ -13,7 +13,7 @@
   <meta name="author" content="Nathan Yan">
 
   <link rel="stylesheet" href="fonts/inter.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css?v=2">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
 
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -50,16 +50,20 @@
 
         }
 
+       
         @media only screen and (max-width: 500px){
             #download-packet-button {
                 border-style: none;
                 padding:0 ;
             }
+
+            
         }
 
 </style>
 
 <body style = 'overflow-x: hidden'>
+        {{header()}}
         {{headerMobile()}}
         {{headerMobileExpanded()}}
 

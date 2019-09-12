@@ -43,7 +43,7 @@
 {%endmacro%}
 
 {% macro header() %}
-<div style = 'display: flex' id = 'header'>
+<div style = '' id = 'header'>
     <div id = 'logo-wrapper'>
         <span id = 'logo'><a id = 'link' href = '/' style = 'text-decoration: none; color: black'>NRC</a></span>
     </div> 
@@ -59,7 +59,7 @@
 {%endmacro%}
 
 {% macro headerMobile() %}
-<div style = 'display: flex' id = 'header'>
+<div style = '' id = 'header-mobile'>
     <div id = 'logo-wrapper'>
         <span id = 'logo'><a id = 'link' href = '/' style = 'text-decoration: none; color: black'>NRC</a></span>
     </div> 
@@ -73,7 +73,7 @@
 
 
 {% macro headerMobileExpanded() %}
-<div style = 'width: 100%; height: 100%; background: white; position: fixed; top: 0; left: 0; padding-left: 8vw; display: none' id = 'mobile-expand' class = 'valign'>
+<div style = 'width: 100%; height: 100%; background: white; position: fixed; top: 0; left: 0; padding-left: 8vw; display: none;z-index: 10' id = 'mobile-expand' class = 'valign'>
     <div>
         <span style = 'cursor: pointer; color: #ff3e3e; font-family: Material Icons; font-size: 15vw;' id = 'menu-close'>close</span>
         <div style = 'font-size: 10vw; margin-top: 5vh; margin-left: 2vw'><a href = '/info' class = 'page-link-mobile'>info</a></div>

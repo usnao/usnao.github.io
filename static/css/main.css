@@ -19,6 +19,12 @@ body {
 
         color: black;
     }
+    
+    #header-mobile {
+        padding: 60px 100px 0px 10vw; 
+
+        color: black;
+    }
 
     #pages {
         text-align: right; 
@@ -149,6 +155,15 @@ body {
         column-count: 2; 
     }
 
+
+    #header-mobile {
+        display :none;
+    }
+
+    #header {
+        display: flex;
+    }
+    
     @media only screen and (max-width:620px) {
         /* For mobile phones: */
        
@@ -173,6 +188,16 @@ body {
         .largel-font {
             font-size: 50px
         }
+
+    @media only screen and (max-width: 1000px){
+        #header-mobile {
+            display: flex;
+        }
+
+        #header {
+            display: none;
+        }
+    }
     
     @media only screen and (max-width: 900px){
         #tarc-description 

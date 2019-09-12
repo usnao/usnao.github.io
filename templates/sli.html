@@ -1,6 +1,6 @@
 <!doctype html>
 
-{% from "macros.html" import footer, header %}
+{% from "macros.html" import footer, header, headerMobile, headerMobileExpanded %}
 
 <html lang="en">
 <head>
@@ -12,11 +12,12 @@
   <meta name="author" content="Nathan Yan">
 
   <link rel="stylesheet" href="fonts/inter.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
 
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel = 'stylesheet' href = '/css/main.css'>
+    <link rel = 'stylesheet' href = '/css/main.css?v=2'>
 
 </head>
 
@@ -28,7 +29,8 @@
 
 <body style = 'padding-bottom: 200px; overflow-x: hidden'>
         {{header()}}
-
+        {{headerMobile()}}
+        {{headerMobileExpanded()}}
     <div id = 'main-page-content'>
         <img src = "/photos/sli-prelaunch.jpg" style = 'width: 50%; border-radius: 15px' class = 'main-picture'>
 
@@ -206,4 +208,12 @@
         $('.main-picture').css('bottom', percentage_bottom * 100 + '%')
         $('#page-content').css('top', (content_percentage * 100) + "%");
     }
+
+    $('#menu-sandwich').click(() => {
+        $('#mobile-expand').css('display', 'flex');  
+    })
+
+    $('#menu-close').click(() => {
+        $('#mobile-expand').css('display', 'none');
+    })
 </script>
