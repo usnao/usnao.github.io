@@ -5,10 +5,9 @@ from pymongo import MongoClient
 connection_string = "mongodb://admin:Mf5TB36utkjq1MLb@gradebook-cluster0-shard-00-00-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-01-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-02-l24me.mongodb.net:27017/test?ssl=true&replicaSet=GradeBook-Cluster0-shard-0&authSource=admin&retryWrites=true"
 
 connection = MongoClient(connection_string)
-db = connection['newport-rocketry']
+db = connection['usnao']
 
-members = db.members
-articles = db.articles
+registrations = db.registrations
 
 app = Flask(__name__, static_url_path = "", static_folder = "static")
 app.url_map.strict_slashes = False
@@ -21,13 +20,33 @@ with open('photos.txt', 'r') as p:
 def index():
     return render_template("index.html")
 
-@app.route("/mobile")
-def mobile():
-    return render_template('mobile.html')
+@app.route("/register", methods = ["GET", "POST"])
+def register():
+    if request.method == "GET":
+        return render_template('register.html')
+    else:
+        print(request.form)
+        form = request.form
+        print(registrations.insert_one({
+            "first" : form['first'],
+            "last" : form['last'],
+            "email" : form['email'],
+            "sname" : form['school_name'],
+            "sloc" : form['school_address'],
+            "description": form['description']
+        }).inserted_id)
+
+@app.route('/register-s')
+def registers():
+    return render_template('register_success.html')
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
     
-@app.route("/tarc")
-def tarc():
-    return render_template("tarc.html")
+@app.route("/team")
+def team():
+    return render_template("team.html")
 
 @app.route("/sli")
 def sli():

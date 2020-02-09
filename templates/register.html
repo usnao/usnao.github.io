@@ -1,0 +1,205 @@
+<!doctype html>
+
+{% from "macros.html" import header %}
+
+<html lang="en" style = 'height: 100%'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NRC</title>
+  <meta name="description" content="United States National Astronomy Olympiad">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans|DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<style>
+.body {
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-weight: 400 !important;
+}
+
+.valign {
+    display: flex;
+    align-content: center;
+}
+
+.button {
+    border-width: 2px;
+    border-radius: 100px;
+
+    padding: 10px 35px 10px 35px;
+    text-align: center;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.link-to-page {
+    text-decoration: underline;
+    font-size: 1.3vw;
+    color: #2400ff
+}
+
+input {
+    border-width: 2px;
+    border-color: #2400ff;
+    padding: 15px 35px 15px 35px;
+    border-radius: 40px;
+
+    font-family: "Inter";
+    font-size: 1.5vw;
+    font-weight: 400 !important;
+    
+}
+
+textarea {
+    border-width: 2px;
+    border-color: #2400ff;
+    padding: 15px 35px 15px 35px;
+    border-radius: 15px;
+
+    font-family: "Inter";
+    font-size: 1.5vw;
+    font-weight: 400 !important;
+}
+
+.error {
+    color: #f25555
+}
+</style>
+
+<body style = 'width: 100%; height: 100%'>
+        <div style = 'width: 100%; padding: 5vw; box-sizing: border-box'>
+                <a href = '/'><img src = '/photos/usnao_logo_black.svg' style = 'width: 15vw'></a>
+            </div>
+
+        <div style = 'position: absolute; left: 25vw; top: 9vh'>
+                {{header()}}
+            </div>
+
+        <div style = 'width: 100%; height: 150%; text-align: center; display: flex; flex-direction: row; padding: 0vw 5vw 0vw 5vw; box-sizing:border-box'>
+            <div style = 'width: 35%; height: 100vh; background: #F6E3FF; color: #2400ff; text-align: left; padding: 3vw;box-sizing: border-box'>
+                <div style = 'font-size: 2vw'>If you are a teacher or administrator at a middle school, high school, university, or other location interested in being a testing location for the United States National Astronomy Olympiad local round, please fill out this form. A representative from USNAO will be in touch with you shortly.</div>
+                
+            </div>
+            <div style = 'width: 65%; height: 100%; background: #FFF; -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            -moz-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1); text-align: left; padding: 3vw 5vw 5vw 5vw; box-sizing: border-box; line-height: 48px;'>
+                <div style = 'font-family: "DM Serif Display"; font-size: 3vw'>Register</div>
+                <form id = 'form' method = 'POST' action = '/register'> 
+                <div style = 'font-size: 1.5vw; margin-top: 2.5vh'>
+                            <span class = 'button' id = 'individual'>Individual</span>
+                            <span class = 'button' id = 'school'>School</span> 
+                            
+                            <input name = "individual_school" id = 'individual_school' value = "" style = 'display: none'/>
+
+                            <div style = 'margin-top: 3vh'>
+                                <div style = 'font-weight: 700; font-family: DM Sans'>Name</div>
+                                <div style = 'display: flex;'>
+                                    <input name = 'first' id=  'first' placeholder = "First" style = 'width: 30%'/><input name = 'last' id = 'last' placeholder = "Last" style = 'width: 30%; margin-left: 1.5vw'/>
+                                </div>
+                            </div> 
+
+                            <div style = 'margin-top: 3vh'>
+                                <div style = 'font-weight: 700; font-family: DM Sans'>Email</div>
+                                <div style = 'display: flex;'>
+                                    <input name = 'email' id = 'email' placeholder = "Email Address" style = 'width: 50%'/>
+                                </div>
+                            </div> 
+
+                            <div style = 'margin-top: 3vh'>
+                                <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Name</div>
+                                <div style = 'display: flex;'>
+                                    <input name = 'school_name' id = 'school_name' placeholder = "School/Location Name" style = 'width: 50%'/>
+                                </div>
+                            </div> 
+
+                            <div style = 'margin-top: 3vh'>
+                                <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Address</div>
+                                <div style = 'display: flex;'>
+                                    <input name = "school_address" id = 'school_address' placeholder = "School/Location Address" style = 'width: 50%'/>
+                                </div>
+                            </div> 
+
+                            <div style = 'margin-top: 3vh; margin-bottom: 6vh'>
+                                <div style = 'font-weight: 700;  font-family: DM Sans; line-height: 30px; width: 60%'>Please enter: Role of applicant (teacher, administrator, professor, etc.), type of location (school/university), and additional comments</div>
+                                <div style = 'display: flex; margin-top: 1vh'>
+                                    <textarea name = "description" id = 'description' rows = "10" cols = "60" placeholder = "Role of application, type of location, additional comments" style = 'width: 80%'></textarea>
+                                </div>
+                            </div>  
+
+                            <span class = 'button' id = 'submit-form' style = 'background: #2400ff; color: white'>Submit -></span>
+                            <div class = 'error' id = 'form-error'></div> 
+                </div>
+                </form>
+                        
+
+            </div>
+        </div>
+</body>
+
+
+<script>
+    $("#individual").click((t) => {
+        $("#individual").css({"background": "#2400ff", "color" : "white"});
+        $("#school").css({"background": "white", "color" : "#2400ff"});
+
+        $("#individual_school").val("individual");
+    })
+
+    $("#school").click((t) => {
+        $("#school").css({"background": "#2400ff", "color" : "white"});
+        $("#individual").css({"background": "white", "color" : "#2400ff"});
+        
+        $("#individual_school").val("school");
+    })
+
+    $('#submit-form').click(() => {
+        let inputs = ['individual_school', 'first', 'last', 'email', 'school_name', 'school_address', 'description'];
+        
+        let email = $('#email');
+        let value = email.val();
+
+        let valid = true;
+
+        if (value.indexOf("@") < 0) {
+            email.css('background', '#ffdddd');
+            $('#form-error').text("Please enter a valid email address");
+            valid = false;
+        }
+
+
+        inputs.map((inp, idx) => {
+            let i = $('#' + inp);
+            if (i.val() === ""){
+                i.css('background', '#ffdddd')
+                $('#form-error').text("Please fill in all the form inputs");
+                valid = false; 
+            }else{
+                i.css('background', 'white')
+
+            }
+        })
+
+        if (valid){ 
+            $("#submit-form").css('background', '#2400ff')
+
+            $('#form-error').text("");
+            $('#form').submit();
+
+        }else{
+            $("#submit-form").css('background', '#f25555')
+        }
+
+        
+        
+    })
+</script>

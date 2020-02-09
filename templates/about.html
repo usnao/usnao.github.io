@@ -1,0 +1,82 @@
+<!doctype html>
+
+{% from "macros.html" import header %}
+
+<html lang="en" style = 'height: 100%'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NRC</title>
+  <meta name="description" content="United States National Astronomy Olympiad">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans|DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<style>
+.body {
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-weight: 400 !important;
+}
+
+.valign {
+    display: flex;
+    align-content: center;
+}
+
+.button {
+    border-width: 3px;
+    border-radius: 100px;
+
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.link-to-page {
+    text-decoration: underline;
+    font-size: 1.3vw;
+    color: #2400ff
+}
+</style>
+
+<body style = 'width: 100%; height: 100%'>
+        <div style = 'width: 100%; padding: 5vw; box-sizing: border-box'>
+            <a href = '/'><img src = '/photos/usnao_logo_black.svg' style = 'width: 15vw'></a>
+        </div>
+
+        <div style = 'position: absolute; left: 25vw; top: 9vh'>
+                {{header()}}
+            </div>
+
+        <div style = 'width: 100%; height: 100%; text-align: center; display: flex; flex-direction: row; padding: 0vw 5vw 0vw 5vw; box-sizing:border-box'>
+            <div style = 'width: 35%; height: 100%; background: #E3EDFF; color: #2400ff; text-align: left; padding: 3vw;box-sizing: border-box'>
+                <div style = 'font-family: "DM Serif Display"; font-size: 3vw'>The IAO</div>
+                <div style = 'font-size: 2vw'>The International Astronomy Olympiad is an annual competition, held in various parts of the world where bright students from around the world meet to solve real world astrophysics and astronomy problems.</div>
+                
+                <div style = 'font-size: 2vw; margin-top: 2.5vh'><span class = 'link-to-page'><a  href = 'http://www.issp.ac.ru/iao/general_e.html'>Learn more about the IAO -></a></span></div>
+            </div>
+            <div style = 'width: 65%; height: 100%; background: #FFF; -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            -moz-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1); text-align: left; padding: 3vw 5vw 5vw 5vw; box-sizing: border-box; '>
+                <div style = 'font-family: "DM Serif Display"; font-size: 3vw'>Our History</div>
+                <div style = 'font-size: 2vw'>The USNAO was formed in 2019 in collaboration with Rice University and Texas Southern University. 
+                        <br/><br/>
+                        Every year the USNAO will send five top competitors to the International Astronomy Olympiad, selected using a qualifying exam, organized by the Institute of Solid State Physics. The 24th IAO will be held in Piatra Neamt, Romania, from October 19-27.
+                        <br/><br/>
+                        If you have any questions or comments, you can contact us via <span class = 'link-to-page' style= 'font-size: 2vw'><a  href = 'mailto:admin@usnao.org'>admin@usnao.org</a></span> or at <span class = 'link-to-page' style= 'font-size: 2vw'><a>+1 575-518-8687</a></span>
+                        </div>
+                        <div style = 'font-size: 2vw; margin-top: 2.5vh'><span class = 'link-to-page'><a  href = '/team'>See the USNAO 2019 Team -></a></span></div>
+                        <div style = 'font-size: 2vw; margin-top: 1vh'><span class = 'link-to-page'><a href = 'https://iao2019.physicsnt.ro/'>Visit the IAO 2019 Website -></a></span></div>
+
+            </div>
+        </div>
+</body>
+

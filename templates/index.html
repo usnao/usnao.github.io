@@ -1,127 +1,73 @@
 <!doctype html>
 
-{% from "macros.html" import footer, header, headerMobile, headerMobileExpanded %}
+{% from "macros.html" import header %}
 
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>NRC</title>
-  <meta name="description" content="Newport Rocketry">
+  <meta name="description" content="United States National Astronomy Olympiad">
   <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans|DM+Serif+Display&display=swap" rel="stylesheet">
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <link rel="stylesheet" href="/fonts/inter.css">
-  <link rel="stylesheet" href="/css/main.css?v=2">
-
-
 </head>
 
 <style>
-    html {
-        width: 100%;
-        height: 100%;
-    }
-    body {
-        font-family: "Inter";
-        font-weight: 500;
-        width:100%;
-        height: 100%;
-        margin: 0;
+.body {
+    font-family: "Inter";
+    font-weight: 400 !important;
+}
 
-        background-position: 30% 25%;
-    background-size: 110%;
-    }
+.valign {
+    display: flex;
+    align-content: center;
+}
 
-    .valign {
-        display: flex;
-        align-items: center;
-    }
+.button {
+    border-width: 2px;
+    border-radius: 100px;
 
-    #logo {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    #header {
-
-        color: white;
-    }
-
-    #pages {
-        text-align: right; 
-    }
-
-    .page-link {
-        margin-right: 70px;
-        font-size: 17px;
-
-        text-decoration: none;
-        color: white;
-    }
-
-    #landing {
-        
-        height: 100%;
-
-        padding-left: 250px;
-
-        color: white;
-        z-index:-1;
-    }
-
-    .subtitle {
-        font-weight: 700;
-    }
-
-    .larger-text {
-        font-size: 20px;
-    }
-
-    #link {
-        color: white !important;
-    }
-
-    @media only screen and (max-width: 900px){
-            #landing {
-                padding-left: 10vw;
-            }
-
-            
-        }
-
-    .photo-close {
-        color: white !important;
-    }
-
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    font-weight: 500;
+}
 </style>
 
-<body style = 'background: url("/photos/rocket_flame.jpg"); background-size: cover; background-position: 10% 25%'>
-    {{header()}}
-    {{headerMobile()}}
-    {{headerMobileExpanded()}}
-
-    <div id = 'landing' class = 'valign'>
-        <div>
-            <div class = 'subtitle largel-font'>
-                Newport Rocketry
+<body style = 'width: 100%; height: 100%'>
+    <div style = 'display: flex; flex-direction: row; width: 100%'>
+        <div style = 'width: 25vw; height: 100%'>
+            <div style = 'width: 25vw; height: 25vh; background: #2400FF' class = 'valign'>
+                <div style = 'width: 100%; text-align: center'>
+                    <img src = '/photos/usnao_logo.svg' style = 'width: 60%'>
+                </div>
             </div>
-            <div class = 'mediuml-font'>
-                Newport High School, 4333 Factoria Blvd SE
+            <div style = 'width: 25vw; height: 75vh; background: #2400FF; padding: 5vw;box-sizing:border-box'>
+                <div style = 'width: 100%; text-align: left'>
+                    <div style = 'font-size: 2.5vw; font-family: "DM Serif Display"; color: white; margin-bottom: 30px'>The <span style = 'color: #FF8A00'>2019 US</span> National Astronomy Olympiad</div>
+                    <a class = 'button' style = "color: white;text-decoration: none; border-color: white" href = '/about' >About -></a>
+                </div>
             </div>
         </div>
+
+        <div style = 'width: 75vw; height: 100vh'>
+            <div style = 'position: absolute; left: 25vw; top: 11vh'>
+                {{header()}}
+            </div>
+            <div style = 'width: 100%; height: 100%; padding: 5vw; box-sizing:border-box' class = 'valign'>
+                <div style = 'width: 50%; text-align: left'>
+                    <div style = 'font-family: "DM Serif Display"; color: #2400FF; font-size: 3vw; margin-bottom: 0px'>Mission</div>
+                    <div style = 'color: black; font-size: 2.2vw; margin-bottom:0'>Develop interest in astronomy within the US and foster skills for future astronomers.</div>
+                </div>
+            </div>
+            <img src = '/photos/jupiter.svg' style = 'width: 50%; position: absolute; right: 100px; bottom: 100px'>
+        </div>
     </div>
-
 </body>
-</html>
 
-<script>
- $('#menu-sandwich').click(() => {
-        $('#mobile-expand').css('display', 'flex');  
-    })
-
-    $('#menu-close').click(() => {
-        $('#mobile-expand').css('display', 'none');
-    })</script>

@@ -1,6 +1,6 @@
 body {
         font-family: "Inter";
-        font-weight: 500;
+        font-weight: 400;
         margin: 0px;
     }
 
@@ -15,8 +15,7 @@ body {
     }
 
     #header {
-        padding: 60px 100px 0px 10vw; 
-
+        padding-left: 5vw;
         color: black;
     }
     
@@ -27,15 +26,21 @@ body {
     }
 
     #pages {
-        text-align: right; 
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
     }
 
     .page-link {
-        margin-right: 70px;
-        font-size: 17px;
+        color: #2400FF;
+        font-weight: 600;
+
+        margin-right: 7vw;
+        font-size: 25px;
 
         text-decoration: none;
-        color: black;
     }
 
     .page-link-mobile {
@@ -189,7 +194,7 @@ body {
             font-size: 50px
         }
 
-    @media only screen and (max-width: 1000px){
+    @media only screen and (max-width: 800px){
         #header-mobile {
             display: flex;
         }

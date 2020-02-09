@@ -1,0 +1,115 @@
+<!doctype html>
+
+{% from "macros.html" import header %}
+
+<html lang="en" style = 'height: 100%'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NRC</title>
+  <meta name="description" content="United States National Astronomy Olympiad">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans|DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<style>
+.body {
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-weight: 400 !important;
+}
+
+.valign {
+    display: flex;
+    align-content: center;
+}
+
+.button {
+    border-width: 2px;
+    border-radius: 100px;
+
+    padding: 10px 35px 10px 35px;
+    text-align: center;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.link-to-page {
+    text-decoration: underline;
+    font-size: 1.3vw;
+    color: #2400ff
+}
+
+input {
+    border-width: 2px;
+    border-color: #2400ff;
+    padding: 15px 35px 15px 35px;
+    border-radius: 40px;
+
+    font-family: "Inter";
+    font-size: 1.5vw;
+    font-weight: 400 !important;
+    
+}
+
+textarea {
+    border-width: 2px;
+    border-color: #2400ff;
+    padding: 15px 35px 15px 35px;
+    border-radius: 15px;
+
+    font-family: "Inter";
+    font-size: 1.5vw;
+    font-weight: 400 !important;
+}
+
+.error {
+    color: #f25555
+}
+
+a {
+    text-decoration: none;
+
+}
+
+</style>
+
+<body style = 'width: 100%; height: 100%'>
+        <div style = 'width: 100%; padding: 5vw; box-sizing: border-box'>
+            <a href = '/'><img src = '/photos/usnao_logo_black.svg' style = 'width: 15vw'></a>
+        </div>
+
+        <div style = 'position: absolute; left: 25vw; top: 9vh'>
+                {{header()}}
+            </div>
+
+        <div style = 'width: 100%; height: 150%; text-align: center; display: flex; flex-direction: row; padding: 0vw 5vw 0vw 5vw; box-sizing:border-box'>
+            
+            <div style = 'width: 50vw; margin-left: 25vw; height: fit-content; background: #FFF; -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            -moz-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1); text-align: left; padding: 3vw 5vw 5vw 5vw; box-sizing: border-box; line-height: 48px;'>
+                <div style = 'font-family: "DM Serif Display"; font-size: 3vw; width: 90%'>Thank you for registering for the USNAO!</div>
+                <div style = 'font-size: 1.5vw; margin-top: 2.5vh; line-height: 30px; width: 90%'>
+                You will receive an email shortly to confirm your registration details. A USNAO representative will be with you shortly.
+                
+                </div>
+                <br/>
+                <a href = '/'><span class = 'button'>Return to home -></span></a>
+                        
+
+            </div>
+        </div>
+</body>
+
+
+<script>
+
+</script>
