@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, render_template , redirect, url_for
-
+import bson
 from pymongo import MongoClient
 
 connection_string = "mongodb://admin:Mf5TB36utkjq1MLb@gradebook-cluster0-shard-00-00-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-01-l24me.mongodb.net:27017,gradebook-cluster0-shard-00-02-l24me.mongodb.net:27017/test?ssl=true&replicaSet=GradeBook-Cluster0-shard-0&authSource=admin&retryWrites=true"
@@ -7,7 +7,8 @@ connection_string = "mongodb://admin:Mf5TB36utkjq1MLb@gradebook-cluster0-shard-0
 connection = MongoClient(connection_string)
 db = connection['usnao']
 
-registrations = db.registrations
+registrations_location = db.registrations_location
+registrations_student = db.registrations_student
 
 app = Flask(__name__, static_url_path = "", static_folder = "static")
 app.url_map.strict_slashes = False
@@ -27,14 +28,43 @@ def register():
     else:
         print(request.form)
         form = request.form
-        print(registrations.insert_one({
-            "first" : form['first'],
-            "last" : form['last'],
-            "email" : form['email'],
-            "sname" : form['school_name'],
-            "sloc" : form['school_address'],
-            "description": form['description']
-        }).inserted_id)
+        if (form['individual_school'] == "school"):
+            print(registrations_location.insert_one({
+                "first" : form['first'],
+                "last" : form['last'],
+                "email" : form['email'],
+                "sname" : form['school_name'],
+                "sloc" : form['school_address'],
+                "description": form['description']
+            }).inserted_id)
+        elif (form['individual_school'] == 'individual'):
+            print(registrations_student.insert_one({
+                "first" : form['sfirst'],
+                "last" : form['slast'],
+                "email" : form['semail'],
+                "teacher_email" : form['steacher-email'],
+                "location" : bson.objectid.ObjectId(form['sschool_name_id']),
+                "description": form['sdescription']
+            }).inserted_id)
+            
+        
+        return render_template('register_success.html')
+
+@app.route("/locations", methods = ["GET"])
+def locations():
+    location_info = []
+    cursor = registrations_location.find()
+
+    for doc in cursor:
+        location_info.append({
+            "id" : str(doc['_id']),
+            "address" : doc['sloc'],
+            "name": doc['sname']
+        })
+    
+    print(location_info)
+    
+    return jsonify({"locations" : location_info})
 
 @app.route('/register-s')
 def registers():

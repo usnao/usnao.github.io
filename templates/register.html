@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>NRC</title>
+  <title>USNAO</title>
   <meta name="description" content="United States National Astronomy Olympiad">
   <meta name="author" content="Nathan Yan">
 
@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=DM+Sans|DM+Serif+Display&display=swap" rel="stylesheet">
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js  "></script>
 </head>
 
 <style>
@@ -74,6 +75,11 @@ textarea {
 .error {
     color: #f25555
 }
+
+.location-selector:hover {
+    color: #2400ff;
+    cursor: pointer;
+}
 </style>
 
 <body style = 'width: 100%; height: 100%'>
@@ -87,58 +93,107 @@ textarea {
 
         <div style = 'width: 100%; height: 150%; text-align: center; display: flex; flex-direction: row; padding: 0vw 5vw 0vw 5vw; box-sizing:border-box'>
             <div style = 'width: 35%; height: 100vh; background: #F6E3FF; color: #2400ff; text-align: left; padding: 3vw;box-sizing: border-box'>
-                <div style = 'font-size: 2vw'>If you are a teacher or administrator at a middle school, high school, university, or other location interested in being a testing location for the United States National Astronomy Olympiad local round, please fill out this form. A representative from USNAO will be in touch with you shortly.</div>
+                <div style = 'font-size: 2vw'>If you are a teacher or administrator at a middle school, high school, university, or other location interested in being a testing location for the United States National Astronomy Olympiad local round, please fill out the "Location" form. A representative from USNAO will be in touch with you shortly.
+                <br/>
+                <br/>
+                If you are a student interested in taking the USNAO exam, please fill out the "Student" form.</div>
                 
             </div>
-            <div style = 'width: 65%; height: 100%; background: #FFF; -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            <div style = 'width: 65%; height: fit-content; background: #FFF; -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
             -moz-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
             box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1); text-align: left; padding: 3vw 5vw 5vw 5vw; box-sizing: border-box; line-height: 48px;'>
                 <div style = 'font-family: "DM Serif Display"; font-size: 3vw'>Register</div>
                 <form id = 'form' method = 'POST' action = '/register'> 
                 <div style = 'font-size: 1.5vw; margin-top: 2.5vh'>
-                            <span class = 'button' id = 'individual'>Individual</span>
-                            <span class = 'button' id = 'school'>School</span> 
+                            <span class = 'button' id = 'individual'>Student</span>
+                            <span class = 'button' id = 'school'>Location</span> 
                             
                             <input name = "individual_school" id = 'individual_school' value = "" style = 'display: none'/>
 
-                            <div style = 'margin-top: 3vh'>
-                                <div style = 'font-weight: 700; font-family: DM Sans'>Name</div>
-                                <div style = 'display: flex;'>
-                                    <input name = 'first' id=  'first' placeholder = "First" style = 'width: 30%'/><input name = 'last' id = 'last' placeholder = "Last" style = 'width: 30%; margin-left: 1.5vw'/>
-                                </div>
-                            </div> 
+                            <div id = 'location-form' style = 'display: none'>
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>Name</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = 'first' id=  'first' placeholder = "First" style = 'width: 30%'/><input name = 'last' id = 'last' placeholder = "Last" style = 'width: 30%; margin-left: 1.5vw'/>
+                                    </div>
+                                </div> 
 
-                            <div style = 'margin-top: 3vh'>
-                                <div style = 'font-weight: 700; font-family: DM Sans'>Email</div>
-                                <div style = 'display: flex;'>
-                                    <input name = 'email' id = 'email' placeholder = "Email Address" style = 'width: 50%'/>
-                                </div>
-                            </div> 
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>Email</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = 'email' id = 'email' placeholder = "Email Address" style = 'width: 50%'/>
+                                    </div>
+                                </div> 
 
-                            <div style = 'margin-top: 3vh'>
-                                <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Name</div>
-                                <div style = 'display: flex;'>
-                                    <input name = 'school_name' id = 'school_name' placeholder = "School/Location Name" style = 'width: 50%'/>
-                                </div>
-                            </div> 
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Name</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = 'school_name' id = 'school_name' placeholder = "School/Location Name" style = 'width: 50%'/>
+                                    </div>
+                                </div> 
 
-                            <div style = 'margin-top: 3vh'>
-                                <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Address</div>
-                                <div style = 'display: flex;'>
-                                    <input name = "school_address" id = 'school_address' placeholder = "School/Location Address" style = 'width: 50%'/>
-                                </div>
-                            </div> 
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Address</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = "school_address" id = 'school_address' placeholder = "School/Location Address" style = 'width: 50%'/>
+                                    </div>
+                                </div> 
 
-                            <div style = 'margin-top: 3vh; margin-bottom: 6vh'>
-                                <div style = 'font-weight: 700;  font-family: DM Sans; line-height: 30px; width: 60%'>Please enter: Role of applicant (teacher, administrator, professor, etc.), type of location (school/university), and additional comments</div>
-                                <div style = 'display: flex; margin-top: 1vh'>
-                                    <textarea name = "description" id = 'description' rows = "10" cols = "60" placeholder = "Role of application, type of location, additional comments" style = 'width: 80%'></textarea>
-                                </div>
-                            </div>  
+                                <div style = 'margin-top: 3vh; margin-bottom: 6vh'>
+                                    <div style = 'font-weight: 700;  font-family: DM Sans; line-height: 30px; width: 60%'>Please enter: Role of applicant (teacher, administrator, professor, etc.), type of location (school/university), and additional comments</div>
+                                    <div style = 'display: flex; margin-top: 1vh'>
+                                        <textarea name = "description" id = 'description' rows = "10" cols = "60" placeholder = "Role of application, type of location, additional comments" style = 'width: 80%'></textarea>
+                                    </div>
+                                </div>  
+                            </div>
 
-                            <span class = 'button' id = 'submit-form' style = 'background: #2400ff; color: white'>Submit -></span>
+                            <div id = 'student-form' style = 'display: none'>
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>Name</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = 'sfirst' id=  'sfirst' placeholder = "First" style = 'width: 30%'/><input name = 'slast' id = 'slast' placeholder = "Last" style = 'width: 30%; margin-left: 1.5vw'/>
+                                    </div>
+                                </div> 
+
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>Email</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = 'semail' id = 'semail' placeholder = "Email Address" style = 'width: 50%'/>
+                                    </div>
+                                </div> 
+
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>Teacher Email</div>
+                                    <div style = 'display: flex;'>
+                                        <input name = 'steacher-email' id = 'steacher-email' placeholder = "Teacher Email Address" style = 'width: 50%'/>
+                                    </div>
+                                </div> 
+
+                                <div style = 'margin-top: 3vh'>
+                                    <div style = 'font-weight: 700; font-family: DM Sans'>School/Location Name</div>
+                                    <div style = 'font-weight: 700; font-family: DM Sans; font-size: 14px; color: #aaa; margin-top: -3vh'>You can search by location name or by address</div>
+                                    <div style = 'height: fit-content; position: absolute'>
+                                        <input name = 'sschool_name' id = 'sschool_name' placeholder = "School/Location Name" style = 'width: 100%'/>
+
+                                        <input name = 'sschool_name_id' id = 'sschool_name_id' style = 'display: none'/>
+                                        <div id = 'sschool_name_auto' style = 'display: none; margin-top: 1vh; width: 90%; background: white; height: fit-content; border-radius: 10px; padding: 1vw 2vw 1vw 2vw;  -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+                                        -moz-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+                                        box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1); '></div>
+                                    </div>
+                                </div> 
+
+                                <div style = 'margin-top: 11vh; margin-bottom: 6vh'>
+                                    <div style = 'font-weight: 700;  font-family: DM Sans; line-height: 30px; width: 60%'>Additional Comments</div>
+                                    <div style = 'display: flex; margin-top: 1vh'>
+                                        <textarea name = "sdescription" id = 'sdescription' rows = "10" cols = "60" placeholder = "Additional comments" style = 'width: 80%'></textarea>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            
+                            <span class = 'button' id = 'submit-form' style = 'display: none; background: #2400ff; color: white'>Submit -></span>
                             <div class = 'error' id = 'form-error'></div> 
-                </div>
+                    </div>
                 </form>
                         
 
@@ -148,11 +203,33 @@ textarea {
 
 
 <script>
+    let fuse;
+    let locations;
+    let form; 
+
+    $(document).ready(() => {
+        $.get("/locations", (data) => {
+            console.log(data);
+            locations = data.locations;
+            let options = {
+                keys: ['address', 'name'],
+            }
+            fuse = new Fuse(data.locations, options);
+        })
+    })
+
     $("#individual").click((t) => {
         $("#individual").css({"background": "#2400ff", "color" : "white"});
         $("#school").css({"background": "white", "color" : "#2400ff"});
 
         $("#individual_school").val("individual");
+
+        $('#location-form').css('display', 'none');
+        $('#student-form').css('display', 'initial');
+        $('#submit-form').css('display', 'initial');
+
+        form = 1;
+
     })
 
     $("#school").click((t) => {
@@ -160,36 +237,131 @@ textarea {
         $("#individual").css({"background": "white", "color" : "#2400ff"});
         
         $("#individual_school").val("school");
+
+        $('#student-form').css('display', 'none');
+        $('#location-form').css('display', 'initial');
+        $('#submit-form').css('display', 'initial');
+
+        form = 0;
     })
 
-    $('#submit-form').click(() => {
-        let inputs = ['individual_school', 'first', 'last', 'email', 'school_name', 'school_address', 'description'];
-        
-        let email = $('#email');
-        let value = email.val();
+    $("#sschool_name").keyup(() => {
+        let val = $('#sschool_name').val();
+        let locations = (fuse.search(val));
 
-        let valid = true;
+        $('#sschool_name_auto').html("");
+        locations.map((loc, idx) => {
+            let location = $(`<div class = 'location-selector' id = ${loc.id}>`);
 
-        if (value.indexOf("@") < 0) {
-            email.css('background', '#ffdddd');
-            $('#form-error').text("Please enter a valid email address");
-            valid = false;
-        }
+            location.html(`<div style = 'font-size: 15px; font-weight: 500'>${loc.name}</div><div style = 'margin-top: -1vh; font-size: 12px; line-height: 2vh'>${loc.address}</div>`);
+            $('#sschool_name_auto').append(location);
+        })
+    })
 
+    $(document).on('click', '.location-selector', (t) => {
+        let element = t.target.parentElement;
+        let id = $(element).attr('id'); 
 
-        inputs.map((inp, idx) => {
-            let i = $('#' + inp);
-            if (i.val() === ""){
-                i.css('background', '#ffdddd')
-                $('#form-error').text("Please fill in all the form inputs");
-                valid = false; 
-            }else{
-                i.css('background', 'white')
-
+        let name;
+        locations.map((loc, idx) => {
+            if (loc.id === id){
+                name = loc.name;
             }
         })
 
-        if (valid){ 
+        $("#sschool_name_id").val(id);
+        $('#sschool_name').val(name);
+        console.log(element);
+        console.log(id);
+
+    });
+
+    $('#sschool_name').focusin(() => {
+            $('#sschool_name_auto').css('display', 'inherit');
+    })
+
+    $('#sschool_name').focusout(() => {        
+        setTimeout(() => {
+            $('#sschool_name_auto').css('display', 'none');
+        
+        }, 300);
+        
+    })
+
+    $('#submit-form').click(() => {
+        let inputs; 
+        let valids = [];
+        console.log(form);
+
+        if (form == 0){
+            inputs = ['first', 'last', 'email', 'school_name', 'school_address', 'description'];
+            valids = [true,true,true,true,true,true ];
+
+            let email = $('#email');
+            let value = email.val();
+
+
+            if (value.indexOf("@") < 0) {
+                email.css('background', '#ffdddd');
+                $('#form-error').text("Please enter a valid email address");
+                valids[2] = false;
+            }
+
+        }else if (form == 1){
+            inputs = ['sfirst', 'slast', 'semail', 'steacher-email', 'sschool_name', 'sdescription'];
+            valids = [true,true,true,true,false,true ];
+
+            let email = $('#semail');
+            let value = email.val();
+
+            if (value.indexOf("@") < 0) {
+                email.css('background', '#ffdddd');
+                $('#form-error').text("Please enter a valid email address");
+                valids[2] = false;
+            }
+
+            email = $('#steacher-email');
+            value = email.val();
+
+            if (value.indexOf("@") < 0) {
+                email.css('background', '#ffdddd');
+                $('#form-error').text("Please enter a valid email address");
+                valids[3] = false;
+            }
+
+            let sschool = $('#sschool_name');
+            // Look for sschool_name
+            locations.map((loc, idx) => {
+                if (loc.name == sschool.val()){
+                    $("#sschool_name_id").val(loc.id);
+                    valids[4] = true;
+                }
+            })
+
+            if (!valids[4]){
+                sschool.css('background', '#ffdddd');
+                $('#form-error').text("Please enter a valid testing location");
+            }
+        }
+        
+
+        inputs.map((inp, idx) => {
+            let i = $('#' + inp);
+            if (inp != 'sdescription') {
+                
+                
+                if (i.val() === ""){
+                    i.css('background', '#ffdddd')
+                    $('#form-error').text("Please fill in all the form inputs");
+                    valids[idx] = false; 
+                }else if(valids[idx]){
+                    i.css('background', 'white')
+
+                }
+            }
+        })
+
+        if (valids.indexOf(false) < 0){ 
             $("#submit-form").css('background', '#2400ff')
 
             $('#form-error').text("");
