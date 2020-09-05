@@ -1,0 +1,179 @@
+<!doctype html>
+
+{% from "macros.html" import footer, header, headerMobile, headerMobileExpanded %}
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>USNAO</title>
+  <meta name="description" content="Newport Rocketry">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css?v=2">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<style>
+   #page-content {
+        padding: 50px 14vw 14vw 10vw;
+        position: inherit;
+        width: initial;
+        }
+
+        #footer {
+            margin-left: 0;
+        }
+
+        #message-to-sponsors {
+                min-width: 500px;
+                width: 50%; 
+            }
+
+        @media only screen and (max-width: 900px){
+            #page-content {
+                padding: 50px 
+            }
+
+            #message-to-sponsors {
+                min-width: 0 !important;
+                width: 100%;
+            }
+
+        }
+
+       
+        @media only screen and (max-width: 500px){
+            #download-packet-button {
+                border-style: none;
+                padding:0 ;
+            }
+
+            
+        }
+
+</style>
+
+<body style = 'overflow-x: hidden'>
+        {{header()}}
+        {{headerMobile()}}
+        {{headerMobileExpanded()}}
+
+    <div id = 'main-page-content'>
+        <div id = 'page-content'>
+            <div class = 'largel-font' style = 'color: #ff9cb4; margin-bottom: 20px'>Sponsorship</div>
+            
+            <a href = '/documents/sponsorship-packet.pdf' style = 'text-decoration: none'><span class = 'button' id = 'download-packet-button' ref = 'download-packet' style = 'margin-bottom: 50px'>
+                Download our sponsorship packet
+            </span></a>
+
+            <div style = 'margin-top: 50px'>
+                <div id = 'message-to-sponsors' style = ''>
+                    <p>
+                    Newport Rocketry has long cultivated an environment of fun and gentle learning. The club aims to be inviting but focused on rocketry, and our passion for it is clearly reflected in our achievements. Although we have some opportunities to gain money throughout the year, our club is run mostly on its own internally supplied funds. As a result, sponsorships are always welcome!</p>
+                    <p>
+                        If you're interested in sponsoring us, email us at <b>newportrocketry@gmail.com</b>
+                    </p>
+
+                    <p class = 'large-font' style ='font-weight: 600'>
+                        Thanks to our sponsors, SolidWorks and Aerojet Rocketdyne
+                    </p>
+
+                    <div style = 'width: 100%'>
+                        <img src = 'photos/solidworks_logo.png' style = 'width: 35%; margin-right: 10%'>
+                        <img src = 'photos/aerojet_logo.png' style = 'width: 35%'>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+    {{footer()}}
+
+</body>
+</html>
+
+<script>
+    $("#meet-the-teams-button").click((e) => {
+        let pos = e.target.getBoundingClientRect();
+
+        console.log(pos);
+
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8
+        });
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'all 0.8s ease',
+            'display' : "initial"
+        })
+        }, 10)
+       
+
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'top' : "50px",
+            'left' : "50px",
+            'width' : "calc(100vw - 108px)",
+            'height' : "calc(100vh - 108px)",
+            'overflow-y' : 'scroll'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "50px"
+        });
+        }, 30)
+        
+    })
+
+    $('.sub-page-close').click(() => {
+        let pos = document.getElementById('meet-the-teams-button').getBoundingClientRect();
+
+       
+
+        setTimeout(() => {
+            $(".sub-page-content").css({
+            'transition': 'none',
+            "display" : "none"
+        })
+        }, 1000)
+       
+        $(".sub-page-content").css({
+            'position' : 'fixed',
+            'top' : pos.top,
+            'left' : pos.left,
+            'width' : pos.width - 8,
+            'height' : pos.height - 8,
+            'overflow' : 'hidden'
+        });
+
+        $(".sub-page-text").css({
+            'padding' : "10px"
+        });
+    })
+
+    
+    $('#menu-sandwich').click(() => {
+        $('#mobile-expand').css('display', 'flex');  
+    })
+
+    $('#menu-close').click(() => {
+        $('#mobile-expand').css('display', 'none');
+    })
+</script>

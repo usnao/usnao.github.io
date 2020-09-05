@@ -1,0 +1,89 @@
+<!doctype html>
+
+{% from "macros.html" import header %}
+
+<html lang="en" style = 'height: 100%'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>USNAO</title>
+  <meta name="description" content="United States National Astronomy Olympiad">
+  <meta name="author" content="Nathan Yan">
+
+  <link rel="stylesheet" href="fonts/inter.css">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel = 'stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans|DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<style>
+.body {
+    box-sizing: border-box;
+    font-family: "Inter";
+    font-weight: 400 !important;
+}
+
+.valign {
+    display: flex;
+    align-content: center;
+}
+
+.button {
+    border-width: 3px;
+    border-radius: 100px;
+
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.link-to-page {
+    text-decoration: underline;
+    color: #2400ff
+}
+
+.team {
+    font-size: 1vw;  
+    margin-top: 5vh; 
+    width: 45%;
+    line-height: 20px;
+    margin-right: 5%;
+}
+</style>
+
+<body style = 'width: 100%; height: 100%'>
+        <div style = 'width: 100%; padding: 5vw; box-sizing: border-box'>
+                <a href = '/'><img src = '/photos/usnao_logo_black.svg' style = 'width: 15vw'></a>
+            </div>
+
+        <div style = 'position: absolute; left: 25vw; top: 9vh'>
+                {{header()}}
+            </div>
+
+        <div style = 'width: 100%; height: 100%; text-align: center; display: flex; flex-direction: row; padding: 0vw 5vw 0vw 5vw; box-sizing:border-box'>
+            <div style = 'width: 35%; height: 100%; background: #E3EDFF; color: #2400ff; text-align: left; box-sizing: border-box; display: flex; flex-direction: column'>
+                <div style = 'background: #E3EDFF; font-size: 2vw; padding: 3vw'>As of 2019 there has only been one USNAO team.</div>
+                <div style = 'background: #F6E3FF; font-size: 2vw; padding: 3vw'>If you are interested in competing in the future, register <span class = 'link-to-page'><a href = "/register">here</a></span>.                    </div>
+                <div style = 'height: 100%; background: #FFE3F4; font-size: 2vw; padding: 3vw'>If you would like to know more about the selection process, visit our <span class = 'link-to-page'><a href = "/about">about page</a></span>.</div>
+            </div>
+            <div style = 'width: 65%; height: 100%; background: #FFF; -webkit-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            -moz-box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1);
+            box-shadow: -4px 4px 20px 0px rgba(0,0,0,0.1); text-align: left; padding: 3vw 5vw 5vw 5vw; box-sizing: border-box; line-height: 48px;'>
+                <div style = 'font-family: "DM Serif Display"; font-size: 3vw'>Teams</div>
+                <div style = 'width: 100%; display: flex; flex-wrap: wrap'>
+                   
+                    <div style = 'font-size: 2vw' class = 'team'>
+                            <div style = 'font-size: 2vw; color: #2500ff; font-weight: 700; font-family: "DM Sans"; margin-bottom: 15px'>IAO 2019</div>
+                            <div style = 'font-size: 1vw; color: #16009F; border-bottom: solid 1px #aaa; padding: 0px 0 10px 0'><b>Sri Devulapalli</b> - Carnegie Vanguard High School, Houston, TX</div>
+                            <div style = 'font-size: 1vw; color: #16009F; border-bottom: solid 1px #aaa; padding: 10px 0 10px 0'><b>Jack Lee</b> - Seven Lakes High School, Katy, TX</div>
+                            <div style = 'font-size: 1vw; color: #16009F; border-bottom: solid 1px #aaa; padding: 10px 0 10px 0'><b>Nathan Yan</b> - Newport High School, Bellevue, WA</div>
+                            <div style = 'font-size: 1vw; color: #16009F; padding: 10px 0 10px 0'><b>Jonah Quist</b> - Newport High School, Bellevue, WA</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+</body>
+
