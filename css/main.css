@@ -106,10 +106,14 @@ body {
         
         padding: 10px;
         background: transparent;
-
+        max-width: 100%;
         font-weight: 600;
+        
     }
 
+    .btn {
+        margin-bottom: 10px;
+    }
     #tarc-description {
         margin-top: 50px;
         font-size: 17px;
