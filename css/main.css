@@ -2,8 +2,10 @@ body {
         font-family: "Inter";
         font-weight: 400;
         margin: 0px;
+        position: relative;
+        margin: 0; height: 100%; overflow: hidden
     }
-
+      
     .valign {
         display: flex;
         align-items: center;
