@@ -106,10 +106,14 @@ body {
         
         padding: 10px;
         background: transparent;
-
+        max-width: 100%;
         font-weight: 600;
+        
     }
 
+    .btn {
+        margin-bottom: 10px;
+    }
     #tarc-description {
         margin-top: 50px;
         font-size: 17px;
@@ -168,7 +172,13 @@ body {
     #header {
         display: flex;
     }
-    
+    .navbar a{
+    font-family: DM Sans !important;
+    }
+    a.external {
+        background: url(https://img.icons8.com/nolan/2x/external-link.png) center right no-repeat;
+        padding-right: 13px;
+    }
     @media only screen and (max-width:620px) {
         /* For mobile phones: */
        
